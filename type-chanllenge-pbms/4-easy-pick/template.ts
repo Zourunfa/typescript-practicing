@@ -4,6 +4,8 @@ type MyPick<T, K extends keyof T> = {
   [P in K]: T[P];
 };
 
+// keyof 获得对象中的所有属性的key值 ：相当于js的Object.keys()
+
 // js
 // 对比学习法
 function myPick(todo, keys) {
