@@ -1,10 +1,12 @@
-type First<T extends any[]> = T extends [infer Result, ...infer Rest] ? Result : never;
+// 结果：3
+// type result2 = First<[3, 2, 1]>;
+// // 结果：never
+// type result3 = First<[]>;
+// 方法一
+// type First<T extends any[]> = T extends [] ? never : T[0];
 
+// - `T extends []`：用来判断`T`是否是一个空数组。
 
-// infer 在编写时对未知类型的推断，在使用时按照给定泛型的匹配关系推断出正确类型
+// 方法二
 
-// 例如
-// type Flatten<Type> = Type extends Array<infer Item>? Item:Type
-// type strArr = Flatten<string[]>
-
-// 上面的strArr中泛型传入了string[]  所以infer推断出Item为string类型
+type First<T extends any[]> = T extends [infer R, ...infer L] ? R : never;
