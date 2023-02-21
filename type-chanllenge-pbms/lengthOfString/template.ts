@@ -1,0 +1,1 @@
+type LengthOfString<S extends string, T extends string[] = []> = S extends `${infer char}${infer R}` ? LengthOfString<R, [...T, char]> : T['length']
