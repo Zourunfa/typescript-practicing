@@ -1,0 +1,1 @@
+type StringToArray<S extends string, U extends any[] = []> = S extends `${infer Char}${infer R}` ? StringToArray<R, [...U, Char]> : U

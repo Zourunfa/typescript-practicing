@@ -1,0 +1,1 @@
+type Absolute<T extends number | string> = `${T}` extends `-${infer N}` ? N : `${T}` 

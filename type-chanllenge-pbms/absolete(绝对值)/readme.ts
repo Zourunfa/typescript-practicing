@@ -1,0 +1,1 @@
+type result = Absolute<-531>
