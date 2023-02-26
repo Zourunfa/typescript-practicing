@@ -1,0 +1,1 @@
+type result = CamelCase<'foo-bar-baz'>
