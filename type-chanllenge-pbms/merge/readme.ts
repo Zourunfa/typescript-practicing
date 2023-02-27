@@ -1,11 +1,13 @@
 type Foo = {
-  a: number;
-  b: string;
+  id: number;
+  name: string;
+  age: string;
 }
 type Bar = {
-  b: number;
-  c: boolean;
+  name: string;
+  age: string;
+  gender: number;
 }
 
-// 结果：{ a: number; b: number; c: boolean; }
-type result = Merge<Foo, Bar>
+// 结果：{ id: number; gender: number; }
+type result = Diff<Foo, Bar>
