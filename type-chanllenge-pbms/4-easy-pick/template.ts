@@ -5,6 +5,7 @@ type MyPick<T, P extends keyof T> = {
 /***
  * 
  * 
+ * test git setting
 [k in P]
 当使用 k in P 时，这里的 P 必须是一个联合类型或者索引签名类型的键类型。
 这表示将遍历联合类型 P 中的所有成员，并且每个成员都会被用作新类型的一个属性键。
