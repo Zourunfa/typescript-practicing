@@ -1,7 +1,6 @@
-type MyPick<T, P extends keyof T> = {
-  [k in P]: T[k]
+type MyPick<T, K extends keyof T> = {
+  [P in K]: T[P]
 }
-
 /***
  * 
  * 
