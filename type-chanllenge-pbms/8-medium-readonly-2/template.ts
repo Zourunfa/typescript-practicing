@@ -21,5 +21,15 @@
 // };
 
 type MyReadonly2<T, K extends keyof T = keyof T> = Omit<T, K> & {
-  readonly [P in keyof T as P extends K ? P : never]: T[P];
-};
+  readonly [P in keyof T as P extends K ? P : never]: T[P]
+}
+
+/**
+ * Omit<T, K> 把 T 中除了 K 之外的属性剔除，得到一个新的对象。
+ * 
+ * {
+  readonly [P in keyof T as P extends K ? P : never]: T[P]
+};把 T 中除了 K 之外的属性变为只读，并把 K 之外的属性保持不变。
+ * 
+这两者合并就是想要的
+ */
